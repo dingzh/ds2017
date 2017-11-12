@@ -18,7 +18,9 @@ class deque {
 		node(node* _prev, node* _next, const T &obj):
 				prev(_prev), next(_next), object(new T(obj)) {};
 		~node() {
-			delete object;
+			if (object) {
+				delete object;
+			}
 		}
 	};
 
@@ -134,9 +136,15 @@ public:
 		}
 
 		T& operator*() const {
+			if (!ptr->object) {
+				throw invalid_iterator();
+			}
 			return *ptr->object;
 		}
 		T* operator->() const noexcept {
+			if (!ptr->object) {
+				throw invalid_iterator();
+			}
 			return ptr->object;
 		}
 
@@ -274,10 +282,16 @@ public:
 			}
 
 			const T& operator*() const {
+				if (!ptr->object) {
+					throw invalid_iterator();
+				}
 				return *ptr->object;
 			}
 
 			const T* operator->() const noexcept {
+				if (!ptr->object) {
+					throw invalid_iterator();
+				}
 				return ptr->object;
 			}
 
