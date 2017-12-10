@@ -35,7 +35,7 @@ add_executable(deque-advan-3 test/deque/deque-advan-3.cc include/deque.hpp)
 add_executable(deque-advan-4 test/deque/deque-advan-4.cc include/deque.hpp)
 
 add_executable(map_basic test/map/map-basic.cc include/map.hpp)
-add_executable(map_hash test/map/map-hash.cc include/map.hpp)
+#add_executable(map_hash test/map/map-hash.cc include/map.hpp)
 add_executable(map_advance-1 test/map/map-advance-1.cc include/map.hpp)
 add_executable(map_advance-2 test/map/map-advance-2.cc include/map.hpp)
 add_executable(map_advance-3 test/map/map-advance-3.cc include/map.hpp)

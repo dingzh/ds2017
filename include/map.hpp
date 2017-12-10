@@ -241,7 +241,7 @@ public:
         const_iterator() = default;
         const_iterator(const map* m, node* n): this_map(m), this_node(n) {}
         const_iterator(const const_iterator &other) = default;
-        explicit const_iterator(const iterator &other) {
+        const_iterator(const iterator &other) {
             this_node = other.this_node;
             this_map = other.this_map;
         }
